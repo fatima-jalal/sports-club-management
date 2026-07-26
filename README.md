@@ -1,8 +1,8 @@
-\# Sports Club Management System
+# Sports Club Management System
 
 
 
-\## Phase 1
+# Phase 1
 
 
 
@@ -10,41 +10,41 @@ This project is a Sports Club Management System.
 
 
 
-\### Technologies Used
+# Technologies Used
 
-\- MySQL
+- MySQL
 
-\- MySQL Workbench
+- MySQL Workbench
 
-\- SQL
+- SQL
 
 
 
-\### Database
+# Database
 
 The database contains three tables:
 
 
 
-1\. Members
+1. Members
 
-2\. SportsClubs
+2. SportsClubs
 
-3\. Rosters
-
-
-
-\### Relationships
-
-\- Members and Rosters are connected using member\_id.
-
-\- SportsClubs and Rosters are connected using club\_id.
-
-\- Foreign keys use ON DELETE CASCADE.
+3. Rosters
 
 
 
-\### Manual Testing
+# Relationships
+
+- Members and Rosters are connected using member\_id.
+
+- SportsClubs and Rosters are connected using club\_id.
+
+- Foreign keys use ON DELETE CASCADE.
+
+
+
+# Manual Testing
 
 Sample records were inserted into all tables.
 
@@ -52,7 +52,7 @@ JOIN queries were executed successfully to verify relationships.
 
 
 
-\## Phase 2
+# Phase 2
 
 
 
@@ -60,61 +60,61 @@ This phase adds the backend logic for user registration, login, and access contr
 
 
 
-\### Technologies Used
+# Technologies Used
 
-\- Python
+- Python
 
-\- Flask
+- Flask
 
-\- Flask-MySQLdb
+- Flask-MySQLdb
 
-\- Werkzeug (for password hashing)
-
-
-
-\### Routes
-
-\- POST register - registers a new member and stores their password as a hash, not plain text
-
-\- POST login - checks the email and password against the database
-
-\- POST admin update-roster - example route that only Admins can access
+- Werkzeug (for password hashing)
 
 
 
-\### Data Integrity Guard
+# Routes
 
-A decorator called admin\_required checks the membership\_type sent in the request. If it's not "Admin", the request is blocked with a 403 error. This stops Students from accessing admin-only actions.
+- POST register - registers a new member and stores their password as a hash, not plain text
+
+- POST login - checks the email and password against the database
+
+- POST admin update-roster - example route that only Admins can access
 
 
 
-\### Testing
+# Data Integrity Guard
+
+A decorator called admin_required checks the membership_type sent in the request. If it's not "Admin", the request is blocked with a 403 error. This stops Students from accessing admin-only actions.
+
+
+
+# Testing
 
 All routes were tested manually using Postman. Screenshots of the tests are in the screenshots folder:
 
-\- join\_test.png and cascade\_test.png - from Phase 1 database testing
+- join_test.png and cascade_test.png - from Phase 1 database testing
 
-\- student\_blocked.png - shows a Student being denied access to the admin route
+- student_blocked.png - shows a Student being denied access to the admin route
 
-\- admin\_allowed.png - shows an Admin successfully accessing the same route
-
-
-
-\### How to Run
-
-1\. Install the required packages: pip install flask flask-mysqldb werkzeug
-
-2\. Make sure MySQL is running and the sportsclubdb database exists with the schema from schema.sql
-
-3\. Update the MYSQL\_PASSWORD in app.py to match your own MySQL password
-
-4\. Run the server: python app.py
-
-5\. Test the routes using Postman at http://127.0.0.1:5000
+- admin_allowed.png - shows an Admin successfully accessing the same route
 
 
 
-\### Note
+# How to Run
+
+1. Install the required packages: pip install flask flask-mysqldb werkzeug
+
+2. Make sure MySQL is running and the sportsclubdb database exists with the schema from schema.sql
+
+3. Update the MYSQL_PASSWORD in app.py to match your own MySQL password
+
+4. Run the server: python app.py
+
+5. Test the routes using Postman at http://127.0.0.1:5000
+
+
+
+# Note
 
 Django was not used for this project since the announcement confirmed there are no restrictions on which language or framework to use. MySQL Workbench and Flask were used instead.
 
