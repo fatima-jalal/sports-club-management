@@ -262,3 +262,61 @@ All three routes were tested manually using Postman:
 
 &#x20;  http://127.0.0.1:5000
 
+
+
+
+
+\## Phase 4
+
+
+
+This phase adds the static front-end presentation layer using HTML, CSS,
+
+and vanilla JavaScript, with mock data only (no live server connection yet).
+
+
+
+\### Pages
+
+
+
+\- templates/student\_portal.html - a student-facing dashboard showing
+
+&#x20; available clubs as cards (with coach, timing, description, and a live
+
+&#x20; capacity bar), plus a registration form to join a club.
+
+\- templates/admin\_workspace.html - an admin-facing dashboard showing
+
+&#x20; pending membership requests with Approve/Deny actions, a table of the
+
+&#x20; current club roster, and placeholder user management buttons.
+
+
+
+\### Structure
+
+
+
+\- static/css/style.css - shared dark-blue themed styling for both pages.
+
+\- static/js/mock-data.js - hardcoded mock arrays for clubs, membership
+
+&#x20; requests, and roster entries, standing in for real database data.
+
+\- static/js/app.js - reads the mock data and dynamically builds the club
+
+&#x20; cards, capacity bars, request cards, and roster table on page load.
+
+
+
+\### How to View
+
+
+
+Open templates/student\_portal.html or templates/admin\_workspace.html
+
+directly in a browser. No server needs to be running for this phase, since
+
+all data is hardcoded in mock-data.js.
+

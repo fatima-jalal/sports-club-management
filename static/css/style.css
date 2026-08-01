@@ -1,0 +1,294 @@
+/* ---------- Base setup ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #0B1220;
+  color: #E5E7EB;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Top navigation bar ---------- */
+.navbar {
+  background-color: #0F1B33;
+  color: #ffffff;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1E2A45;
+}
+
+.navbar .brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.navbar .brand span {
+  color: #38BDF8;
+}
+
+.navbar nav a {
+  color: #CBD5E1;
+  margin-left: 24px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.navbar nav a:hover {
+  opacity: 1;
+  color: #38BDF8;
+}
+
+/* ---------- Page hero / heading section ---------- */
+.hero {
+  padding: 40px 32px 24px 32px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.hero p {
+  color: #94A3B8;
+  font-size: 1rem;
+}
+
+/* ---------- Section wrapper ---------- */
+.section {
+  padding: 24px 32px;
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  color: #ffffff;
+  border-left: 4px solid #38BDF8;
+  padding-left: 10px;
+}
+
+/* ---------- Club cards grid (Student Portal) ---------- */
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.club-card {
+  background-color: #131F38;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  border-top: 5px solid #38BDF8;
+  border: 1px solid #1E2A45;
+}
+
+.club-card h3 {
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.club-card .coach {
+  color: #94A3B8;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.club-card .timing {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #38BDF8;
+  font-weight: 600;
+}
+
+.club-card p.description {
+  font-size: 0.9rem;
+  color: #CBD5E1;
+  margin-bottom: 14px;
+}
+
+/* Capacity bar */
+.capacity-bar-track {
+  background-color: #1E2A45;
+  border-radius: 6px;
+  height: 10px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.capacity-bar-fill {
+  height: 100%;
+  background-color: #38BDF8;
+}
+
+.capacity-bar-fill.full {
+  background-color: #F87171;
+}
+
+.capacity-label {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  margin-bottom: 14px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #F2B705;
+  color: #0B1220;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #38BDF8;
+  color: #0B1220;
+}
+
+.btn.disabled {
+  background-color: #374151;
+  color: #9CA3AF;
+  cursor: not-allowed;
+}
+
+/* ---------- Registration form ---------- */
+.form-card {
+  background-color: #131F38;
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 480px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  border: 1px solid #1E2A45;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #CBD5E1;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #1E2A45;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #0B1220;
+  color: #E5E7EB;
+}
+
+.form-group input::placeholder {
+  color: #64748B;
+}
+
+/* ---------- Admin Workspace: membership request cards ---------- */
+.request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.request-card {
+  background-color: #131F38;
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid #F2B705;
+  border: 1px solid #1E2A45;
+}
+
+.request-card .info strong {
+  color: #ffffff;
+}
+
+.request-card .info span {
+  display: block;
+  font-size: 0.85rem;
+  color: #94A3B8;
+}
+
+.request-actions button {
+  margin-left: 8px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.approve-btn {
+  background-color: #34D399;
+  color: #0B1220;
+}
+
+.deny-btn {
+  background-color: #F87171;
+  color: #0B1220;
+}
+
+/* ---------- Roster table ---------- */
+table.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #131F38;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  border: 1px solid #1E2A45;
+}
+
+table.roster-table th,
+table.roster-table td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid #1E2A45;
+  font-size: 0.9rem;
+  color: #CBD5E1;
+}
+
+table.roster-table th {
+  background-color: #0F1B33;
+  color: #ffffff;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .request-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
