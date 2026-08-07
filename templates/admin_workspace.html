@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Workspace - Sports Club Management System</title>
-  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
 
   <header class="navbar">
     <div class="brand">Sports<span>Club</span> Portal</div>
     <nav>
-      <a href="student_portal.html">Student Portal</a>
-      <a href="admin_workspace.html">Admin Workspace</a>
-    </nav>
+  <a href="/student">Student Portal</a>
+  <a href="/admin">Admin Workspace</a>
+</nav>
   </header>
 
   <section class="hero">
@@ -20,24 +20,19 @@
     <p>Review incoming membership requests and manage club rosters.</p>
   </section>
 
-  <section class="section">
-    <h2>Pending Membership Requests</h2>
-    <div class="request-list" id="request-list">
-      <!-- Request cards are inserted here automatically by app.js -->
-    </div>
-  </section>
-
+ 
   <section class="section">
     <h2>Current Club Roster</h2>
     <table class="roster-table">
       <thead>
-        <tr>
-          <th>Roster ID</th>
-          <th>Student Name</th>
-          <th>Club</th>
-          <th>Join Date</th>
-        </tr>
-      </thead>
+  <tr>
+    <th>Roster ID</th>
+    <th>Student Name</th>
+    <th>Club</th>
+    <th>Join Date</th>
+    <th>Actions</th>
+  </tr>
+</thead>
       <tbody id="roster-table-body">
         <!-- Roster rows are inserted here automatically by app.js -->
       </tbody>
@@ -58,7 +53,6 @@
     </div>
   </section>
 
-  <script src="../static/js/mock-data.js"></script>
-  <script src="../static/js/app.js"></script>
+  <script src="/static/js/app.js"></script>
 </body>
 </html>

@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Student Portal - Sports Club Management System</title>
-  <link rel="stylesheet" href="../static/css/style.css">
+ <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
 
   <header class="navbar">
     <div class="brand">Sports<span>Club</span> Portal</div>
     <nav>
-      <a href="student_portal.html">Student Portal</a>
-      <a href="admin_workspace.html">Admin Workspace</a>
-    </nav>
+  <a href="/student">Student Portal</a>
+  <a href="/admin">Admin Workspace</a>
+</nav>
   </header>
 
   <section class="hero">
@@ -31,10 +31,10 @@
     <h2>Register for a Club</h2>
     <div class="form-card">
       <form id="registration-form">
-        <div class="form-group">
-          <label for="student-name">Your Name</label>
-          <input type="text" id="student-name" placeholder="e.g. Fatima Jalal" required>
-        </div>
+       <div class="form-group">
+  <label for="member-id">Your Member ID</label>
+  <input type="number" id="member-id" placeholder="e.g. 1" required>
+</div>
         <div class="form-group">
           <label for="club-select">Select a Club</label>
           <select id="club-select" required>
@@ -51,7 +51,6 @@
     </div>
   </section>
 
-  <script src="../static/js/mock-data.js"></script>
-  <script src="../static/js/app.js"></script>
+  <script src="/static/js/app.js"></script>
 </body>
 </html>

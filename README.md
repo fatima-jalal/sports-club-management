@@ -320,3 +320,63 @@ directly in a browser. No server needs to be running for this phase, since
 
 all data is hardcoded in mock-data.js.
 
+## Phase 5
+
+This is the final phase, where the static front-end from Phase 4 was fully
+connected to the real Flask backend and MySQL database built in Phases 1-3.
+All mock/hardcoded data has been removed.
+
+### What Changed
+
+- app.py now serves the front-end pages directly (routes / and /student for
+  the Student Portal, /admin for the Admin Workspace), instead of opening
+  the HTML files directly in a browser.
+- A new route, GET /api/admin/roster, was added to return the real roster
+  with student names and club names joined from the members, rosters, and
+  sportsclubs tables.
+- static/js/mock-data.js was deleted. static/js/app.js was rewritten to use
+  fetch() calls to the real API endpoints (/api/clubs/listings,
+  /api/clubs/enroll, /api/clubs/leave/<roster_id>, /api/admin/roster)
+  instead of reading hardcoded arrays.
+- The Student Portal registration form now submits a real member_id, club_id,
+  and join_date to POST /api/clubs/enroll, and the club cards refresh
+  automatically after a successful enrollment.
+- The Admin Workspace roster table now loads real data from the database on
+  page load, and each row has a working Remove button that calls
+  DELETE /api/clubs/leave/<roster_id> and removes the row immediately.
+- The old "Pending Membership Requests" mock section was removed from the
+  Admin Workspace, since the database has no concept of pending requests,
+  only direct enrollments.
+
+### Full Tech Stack
+
+- Python, Flask, Flask-MySQLdb, Werkzeug (backend)
+- MySQL, MySQL Workbench (database)
+- HTML, CSS, vanilla JavaScript with fetch() (frontend)
+- Postman (manual API testing)
+
+### How to Run the Full Application
+
+1. Install dependencies: pip install flask flask-mysqldb werkzeug
+2. Make sure MySQL is running and the sportsclubdb database exists with the
+   schema from schema.sql
+3. Update the MYSQL_PASSWORD in app.py to match your own MySQL password
+4. Run the server: python app.py
+5. Open a browser and go to http://127.0.0.1:5000/student for the Student
+   Portal, or http://127.0.0.1:5000/admin for the Admin Workspace
+
+### How to Test the Full Feature Set
+
+1. On the Student Portal, note a real member_id by running
+   SELECT * FROM members; in MySQL Workbench.
+2. Fill in the registration form with that member_id, pick a club, pick a
+   date, and submit. A success alert appears and the club's capacity bar
+   updates immediately.
+3. Go to the Admin Workspace and confirm the new enrollment appears in the
+   roster table.
+4. Click Remove on any roster row and confirm it disappears immediately and
+   is actually deleted from the database (verify with
+   SELECT * FROM rosters; in Workbench).
+5. Try enrolling into a club that is already at max_capacity and confirm
+   the request is rejected with a 400 error and a clear message.
+
